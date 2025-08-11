@@ -9,6 +9,9 @@
 
 **Idea Date:** May 17, 2019
 
+> **⚠️ Project Status: Partially Completed**  
+> This project was started on June, 2019 but was only partially completed. Core functionality developed but did not deploy a fully working skill.
+
 ---
 
 ## ✨ Features
@@ -20,6 +23,21 @@
 - Handles **Google Assistant permissions** for location access.
 - Includes regex-based validation for flight numbers.
 
+## 💬 Usage Examples
+
+
+### Sample Conversations
+
+Say to your Google Assistant: *"Hey Google, talk to FlyOut"*
+
+**Scenario 1: Direct Flight Number**
+- User: "My flight is AI946"
+- Assistant: "I found your flight AI946 departing at 2:30 PM. Based on current traffic, you should leave by 11:45 AM to arrive 2.5 hours before departure."
+
+
+**Scenario 2: No Flight Number**
+- User: "I don't have a flight number"
+- Assistant: "No problem! What time is your flight departing?"
 
 ---
 
@@ -58,6 +76,22 @@ calculateTime(in_departTime) {
 
 ### Alternative APIs
 - **[AirportsFinder API](https://rapidapi.com/cometari/api/airportsfinder/endpoints)** — Airport information
+
+---
+
+## 🔌 API Documentation
+
+### Endpoints Used
+
+#### AeroDatabox API
+- **Endpoint**: `GET /flights/{flightNumber}`
+- **Purpose**: Get flight departure time and airport location
+- **Response**: `{departureTime, airportCode, airportLocation}`
+
+#### Google Distance Matrix API
+- **Endpoint**: `GET /maps/api/distancematrix/json`
+- **Purpose**: Calculate travel time to airport
+- **Response**: `{duration, distance, trafficConditions}`
 
 ---
 
@@ -147,10 +181,3 @@ calculateTime(in_departTime) {
 ## 📜 License
 MIT License
 
----
-
-## 📝 Development Notes
-- **Remove real API keys** from the code and move them into `config.js` or environment variables.
-- **Document the API calls** with sample responses in `docs/api-references.md`.
-- **Add unit tests** later for regex and API parsing.
-- Make sure to **use async/await** instead of callbacks in `request` for cleaner, maintainable code.

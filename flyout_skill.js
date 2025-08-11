@@ -32,7 +32,7 @@ function distDetail(userLat, userLong, airLat, airLong)
 
 var secondsETA = 0;
 
-var apiKey = 'AIzaSyDDeKC_ec_gR9bvx6pJUPrmIygg4ZSxaXg';
+var apiKey = 'AIza_';
 
 var mapEndpoint = 'https://maps.googleapis.com/maps/api/distancematrix/json?origins=' + userLat + ',' + userLong + '&destinations='  + airLat + ',' + airLong + '&key=' + apiKey;
 
@@ -88,7 +88,7 @@ headers: {
 
 'x-rapidapi-host': 'aerodatabox.p.rapidapi.com',
 
-'x-rapidapi-key': '2eba6715ebmsh3870d8b9c898a80p13b614jsn6ca22fd33ee1',
+'x-rapidapi-key': '2eba6715',
 
 useQueryString: true
 
